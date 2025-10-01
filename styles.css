@@ -1,0 +1,306 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+/* Modern Variables */
+:root {
+    --primary-color: #0052FF;
+    --primary-hover: #0048E0;
+    --secondary-color: #EAF0FF;
+    --text-dark: #121212;
+    --text-light: #5A5A5A;
+    --bg-light: #F7F9FC;
+    --bg-white: #F7F9FC;
+    --border-color: #EAEAEA;
+    --shadow: 0px 8px 24px rgba(18, 18, 18, 0.08);
+    --border-radius: 12px;
+}
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
+    line-height: 1.7;
+    background-color: var(--bg-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.animate-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.animate-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar */
+#mainNav {
+    background-color: rgba(247, 249, 252, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+#mainNav.navbar-scrolled {
+    background-color: rgba(247, 249, 252, 0.95);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: color 0.3s;
+    margin: 0 10px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(45deg, #E0E7FF, #F7F9FC);
+    color: var(--text-dark);
+}
+
+#hero .display-4 {
+    color: var(--text-dark);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+#hero .lead {
+    color: var(--text-light);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 82, 255, 0.3);
+}
+
+.btn-outline-light {
+    color: var(--text-dark);
+    border-color: var(--text-dark);
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--text-dark);
+    color: var(--bg-white);
+}
+
+.hero-image {
+    animation: float 4s ease-in-out infinite;
+    border-radius: var(--border-radius);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+#tentang { background-color: var(--bg-white); }
+#layanan { background-color: var(--secondary-color); }
+#metodologi { background-color: var(--bg-white); }
+#studi-kasus { background-color: var(--secondary-color); }
+#klien { background-color: var(--bg-white); }
+#testimoni { background-color: var(--secondary-color); }
+#kontak { background-color: var(--bg-white); }
+
+/* Service Cards */
+.service-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: none;
+    background-color: var(--bg-white);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.service-icon i {
+    color: var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.service-card:hover .service-icon i {
+    transform: scale(1.2);
+}
+
+/* Metodologi */
+.process-step {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-white);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    border-color: var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 auto 20px;
+}
+
+/* Studi Kasus */
+.case-study {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.case-study:hover {
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.case-study i {
+    color: var(--primary-color);
+}
+
+/* Klien */
+.client-logo {
+    max-height: 50px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Testimoni */
+.testimonial-card {
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--primary-color);
+}
+
+.testimonial-author img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+/* Kontak */
+.contact-form {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+}
+
+.form-control {
+    border-radius: var(--border-radius);
+    padding: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 82, 255, 0.25);
+}
+
+/* Footer */
+footer {
+    background-color: #1C1C1C;
+}
+
+.social-links a {
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color) !important;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
